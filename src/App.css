@@ -1,0 +1,76 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'montserrat', sans-serif;
+}
+
+.content {
+  min-height: 100vh;
+  background-color: #2b3d50;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title h1 {
+  font-size: 3.5rem;
+  color: #FFF;
+  margin-top: 1.5rem;
+}
+
+.div-bt {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.quote-bt {
+  border: none;
+  width: 10rem;
+  padding: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: none;
+  border: 3px solid #00B7FF;
+  /* color: hsl(145, 63%, 49%); */
+  color: #00B7FF;
+  position: relative;
+  transition: .4s linear;
+}
+
+.quote-bt::before,.quote-bt::after {
+  content: '';
+  position: absolute;
+  background-color: #2b3d4fed;
+  height: 3px;
+  width: 12px;
+  transition: .4s linear;
+}
+
+.quote-bt::before {
+  top: -3px;
+  right: 8rem;
+}
+
+.quote-bt::after {
+  bottom: -3px;
+  left: 8rem;
+}
+
+.quote-bt:hover::before {
+  right: 1em;
+}
+
+.quote-bt:hover::after {
+  left: 1em;
+}
+
+.quote-bt:hover {
+  filter: saturate(180%);
+}
