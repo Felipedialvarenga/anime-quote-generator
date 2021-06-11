@@ -11,8 +11,13 @@ function App() {
   
 
   const getQuote = async () => {
+    let bt = document.getElementById('quoteBt')
+    bt.classList.toggle('quote-clicked')
     setRendering("loading")
-    setTimeout(() => setRendering("quoteCard"), 4000)
+    setTimeout(() => {
+      setRendering("quoteCard")
+      bt.classList.toggle('quote-clicked')
+    }, 4000)
     
     const info = await fetch('https://animechan.vercel.app/api/random')
       .then(response => response.json())
@@ -84,7 +89,7 @@ function App() {
         <h1>Anime Quote Generator</h1>
       </div>
       <div className="div-bt">
-        <button className="quote-bt" onClick={getQuote}>Generate Quote</button>
+        <button id="quoteBt" className="quote-bt" onClick={getQuote}>Generate Quote</button>
       </div>
       {rendering === "loading" && <Loading/> }
       {rendering === "quoteCard" && <QuoteCard quote={animeQuote.quote} character={animeQuote.character} picture={charPic}/> }

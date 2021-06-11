@@ -37,11 +37,34 @@
   font-weight: 700;
   cursor: pointer;
   background: none;
-  border: 3px solid #00B7FF;
+  border: 3px solid hsl(197, 100%, 50%);
   /* color: hsl(145, 63%, 49%); */
-  color: #00B7FF;
+  color: hsl(197, 100%, 50%);
   position: relative;
   transition: .4s linear;
+}
+
+.quote-clicked {
+  animation: clickQuote 4s linear;
+  pointer-events: none;
+}
+
+@keyframes clickQuote {
+  0% {
+    color: hsl(197, 0%, 50%);
+    border: 3px solid hsl(197, 0%, 50%);
+  }
+
+  75% {
+    color: hsl(197, 25%, 50%);
+    border: 3px solid hsl(197, 25%, 50%);
+  }
+
+  100% {
+    color: hsl(197, 100%, 50%);
+    border: 3px solid hsl(197, 100%, 50%);
+  }
+
 }
 
 .quote-bt::before,.quote-bt::after {
