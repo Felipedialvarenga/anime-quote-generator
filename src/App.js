@@ -17,7 +17,7 @@ function App() {
     setTimeout(() => {
       setRendering("quoteCard")
       bt.classList.toggle('quote-clicked')
-    }, 4000)
+    }, 4000) 
     
     const info = await fetch('https://animechan.vercel.app/api/random')
       .then(response => response.json())
